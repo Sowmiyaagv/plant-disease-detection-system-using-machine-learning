@@ -1,0 +1,510 @@
+<!--doctype html-->
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==Title==================================-->
+    <title>Product Slider HTML - Website</title>
+    <!--==CSS====================================-->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--==Poppins-Font===========================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--==CSS-Swiper==============================-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"/>
+    <style>
+          /*==css=======================================*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+}
+a{
+    text-decoration: none;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+ 
+/*===Product-slider=================================*/
+.product-slider{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+    margin: 40px auto;
+}
+.slider-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.product-slider-heading{
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Open Sans',sans-serif;
+    color: #313131;
+}
+.product-box{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.08);
+    position: relative;
+}
+ 
+.product-img-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+.product-img a,
+.product-img{
+    width: 100%;
+    height:300px;
+    display: flex;
+}
+ 
+.product-img a img{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    object-position: center;
+    animation: fade 0.6s;
+}
+.product-img-back{
+    display: none;
+ }
+ .product-img-container:hover .product-img-back{
+     display: block;
+ }
+ .product-img-container:hover .product-img-front{
+     display: none;
+ }
+ @keyframes fade{
+     0%{
+         opacity: 0;
+     }
+     100%{
+         opacity: 1;
+     }
+ }
+ .product-box-offer{
+     position: absolute;
+     left: 30px;
+     top: 20px;
+     width: 65px;
+     height: 24px;
+     color: #ffffff;
+     background-color: #e63b3b;
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 0.7rem;
+     letter-spacing: 1px;
+     transition: none !important;
+     animation: none;
+     z-index: 100;
+     font-family: 'Open Sans',sans-serif;
+ }
+.product-box-text{
+     margin-top: 5px;
+     font-family: 'Open Sans',sans-serif;
+ }
+.product-title{
+    color: #333333;
+    font-weight: 600;
+    transition: all ease 0.3s;
+    text-decoration: none;
+}
+.product-title:hover{
+    opacity: 0.7;
+    transition: all ease 0.3s;
+}
+.product-category{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #ff25257c;
+}
+.product-category span{
+    color: #acacac;
+    font-size: 0.9rem;
+    margin:5px 0px;
+}
+.price-buy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.price-buy .p-price{
+    font-size: 1.3rem;
+    color: #333333;
+    font-weight: 700;
+}
+.price-buy .p-buy-btn{
+    color: #e63b3b;
+    margin: 0px 5px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.price-buy .p-buy-btn:hover{
+    text-decoration: underline;
+}
+ 
+.slider-btns{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 10px auto 10px auto;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    position: static !important;
+    transform: translate(0,0);
+    margin: 10px 0px 0px 10px !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: 20px !important;
+    font-weight: 800;
+    color: #111111;
+}
+ 
+@media(max-width:500px){
+    .product-slider-heading{
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    .product-slider{
+        width: 100%;
+    }
+    .product-img a,
+    .product-img{
+    height:230px;}
+    
+.product-img a img{
+    animation:none;
+}
+.product-img-back{
+    display: none;
+ }
+ .product-img-container:hover .product-img-back{
+     display: none;
+ }
+ .product-img-container:hover .product-img-front{
+     display: block;
+ }
+}
+@media(max-width:400px){
+    .product-img a,
+    .product-img{
+    height:190px;}
+    .product-box-offer{
+        top: 10px ;
+        left: 20px ;
+    }
+}
+  
+
+    </style>
+    </head>
+    <body>
+       <!--==Slider============================================-->
+       <section class="product-slider">
+        
+        <!--==heading====================-->
+        <h4 class="product-slider-heading"> IOT Monitoring</h4>
+        <!--btns=========================-->
+        <div class="slider-btns">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <div class="slider-container">
+        <!-- Swiper -->
+        <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!--1================================-->
+            <div class="swiper-slide">
+            <!--box----------------------->
+            <div class="product-box">
+                <!--==offer==-->
+             
+                <!--img-container******-->
+                <div class="product-img-container">
+     
+                <!--img=============-->
+                <div class="product-img">
+                <a href="http://demo47.askas8.se/sv/front-brake-assy-37-5-12-14">
+                    <img alt="" class="product-img-front" src="https://static.vecteezy.com/system/resources/previews/007/449/116/non_2x/small-plant-growing-in-garden-with-sunlight-free-photo.jpg"/>
+                    <img alt="" class="product-img-back" src="https://static.vecteezy.com/system/resources/previews/007/449/116/non_2x/small-plant-growing-in-garden-with-sunlight-free-photo.jpg"/>
+                </a>
+                </div>
+                </div>
+                <!--text***********-->
+                <div class="product-box-text">
+                     <!--category-->
+                     <div class="product-category">
+                        <span>Sunlight</span>
+                    </div>
+                    <!--tile--->
+                    <a href="http://demo47.askas8.se/sv/front-brake-assy-37-5-12-14" class="product-title">
+                        Measure and monitor the intensity of sunlight
+                    </a>
+                    <!--Price--->
+                    <div class="price-buy">
+                       
+                        <a href="http://demo47.askas8.se/sv/front-brake-assy-37-5-12-14" class="p-buy-btn">Measure Now</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!--2================================-->
+            <div class="swiper-slide">
+                <!--box----------------------->
+                <div class="product-box">
+                    <!--==-->
+                    
+        
+                    <!--img-container******-->
+                    <div class="product-img-container">
+         
+                    <!--img=============-->
+                    <div class="product-img">
+                    <a href="#">
+                        <img alt="" class="product-img-front" src="https://gardenerspath.com/wp-content/uploads/2021/02/Moisture-Meter-Inserted-Waiting-for-a-Reading.jpg"/>
+                        <img alt="" class="product-img-back" src="https://gardenerspath.com/wp-content/uploads/2021/02/Moisture-Meter-Inserted-Waiting-for-a-Reading.jpg"/>
+                    </a>
+                    </div>
+                    </div>
+        
+                    <!--text***********-->
+                    <div class="product-box-text">
+                         <!--category-->
+                         <div class="product-category">
+                            <span>Moisture</span>
+                        </div>
+                        <!--tile-->
+                        <a href="#" class="product-title">
+                            aiding in precise irrigation control for optimal plant hydration
+                        </a>
+                        <!--Price-->
+                        <div class="price-buy">
+                       
+                            <a href="#" class="p-buy-btn">Measure Now</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+                <!--3================================-->
+            <div class="swiper-slide">
+                <!--box----------------------->
+                <div class="product-box">
+                    <!--==-->
+                  
+        
+                    <!--img-container******-->
+                    <div class="product-img-container">
+         
+                    <!--img=============-->
+                    <div class="product-img">
+                    <a href="#">
+                        <img alt="" class="product-img-front" src="https://ltblogs.fhsu.edu/inf240/files/2020/10/Climate-hot.jpg" style="width: fit-content;"/>
+                        <img alt="" class="product-img-back" src="https://ltblogs.fhsu.edu/inf240/files/2020/10/Climate-hot.jpg"/>
+                    </a>
+                    </div>
+                    </div>
+        
+                    <!--text***********-->
+                    <div class="product-box-text">
+                         <!--category-->
+                         <div class="product-category">
+                            <span>Temperature</span>
+                        </div>
+                        <!--tile-->
+                        <a href="#" class="product-title">
+                            Measure and regulate ambient temperature
+                        </a>
+                        <!--Price-->
+                        <div class="price-buy">
+                    
+                            <a href="#" class="p-buy-btn">Measure Now</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+                <!--6================================-->
+            <div class="swiper-slide">
+                <!--box----------------------->
+                <div class="product-box">
+                    <!--==-->
+                  
+        
+                    <!--img-container******-->
+                    <div class="product-img-container">
+         
+                    <!--img=============-->
+                    <div class="product-img">
+                    <a href="#">
+                        <img alt="" class="product-img-front" src="https://kellogggarden.com/wp-content/uploads/2020/03/Sprouting-plants.jpg"/>
+                        <img alt="" class="product-img-back" src="https://kellogggarden.com/wp-content/uploads/2020/03/Sprouting-plants.jpg"/>
+                    </a>
+                    </div>
+                    </div>
+        
+                    <!--text***********-->
+                    <div class="product-box-text">
+                         <!--category-->
+                         <div class="product-category">
+                            <span>Soil</span>
+                        </div>
+                        <!--tile-->
+                        <a href="#" class="product-title">
+                            composition of soil particles about its nutrient retention.
+                        </a>
+                        <!--Price-->
+                        <div class="price-buy">
+                        
+                            <a href="#" class="p-buy-btn">Measure Now</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+                <!--4================================-->
+            <div class="swiper-slide">
+                <!--box----------------------->
+                <div class="product-box">
+                    <!--==-->
+                
+        
+                    <!--img-container******-->
+                    <div class="product-img-container">
+         
+                    <!--img=============-->
+                    <div class="product-img">
+                    <a href="#">
+                        <img alt="" class="product-img-front" src="https://cdn.britannica.com/00/155800-131-01773688/winds-palm-trees.jpg"/>
+                        <img alt="" class="product-img-back" src="https://cdn.britannica.com/00/155800-131-01773688/winds-palm-trees.jpg"/>
+                    </a>
+                    </div>
+                    </div>
+        
+                    <!--text***********-->
+                    <div class="product-box-text">
+                         <!--category-->
+                         <div class="product-category">
+                            <span>Air</span>
+                        </div>
+                        <!--tile-->
+                        <a href="#" class="product-title">
+                            Measuring pollutants and oxygen levels
+                        </a>
+                        <!--Price-->
+                        <div class="price-buy">
+                        
+                            <a href="#" class="p-buy-btn">Measure Now</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+                <!--5================================-->
+            <div class="swiper-slide">
+                <!--box----------------------->
+                <div class="product-box">
+                    <!--==-->
+                    
+        
+                    <!--img-container******-->
+                    <div class="product-img-container">
+         
+                    <!--img=============-->
+                    <div class="product-img">
+                    <a href="#">
+                        <img alt="" class="product-img-front" src="https://2fast4buds.com/temp/img_upload/bg_a9c3ad5ef7a1cb07e0b9a947b32864a5.jpg" style="width: 450px;"/>
+                        <img alt="" class="product-img-back" src="https://2fast4buds.com/temp/img_upload/bg_a9c3ad5ef7a1cb07e0b9a947b32864a5.jpg" style="width: 450px;"/>
+                    </a>
+                    </div>
+                    </div>
+        
+                    <!--text***********-->
+                    <div class="product-box-text">
+                         <!--category-->
+                         <div class="product-category">
+                            <span>pH</span>
+                        </div>
+                        <!--tile-->
+                        <a href="#" class="product-title">
+                            measure soil acidity or alkalinity-optimise nutrient uptake
+                        </a>
+                        <!--Price-->
+                        <div class="price-buy">
+                      
+                            <a href="#" class="p-buy-btn">Measure Now</a>
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+                
+        </div>
+        </div>
+        </div>
+        </section>
+        <!--slider-end-------->
+         <!--==JS-Swiper====================================-->
+         <script src="js/swiper-bundle.min.js"></script>
+         <!--==script=======================================-->
+         <script>
+             /*Initialize Swiper*/
+            var swiper = new Swiper(".mySwiper", {
+              slidesPerView: 1,
+              spaceBetween: 10,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              autoplay: {
+              delay: 6000,
+              disableOnInteraction: false,
+            },
+              navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+              breakpoints: {
+                360: {
+                  slidesPerView: 1.5,
+                  spaceBetween: 20,
+                },
+                540: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1200: {
+                  slidesPerView: 4,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 20,
+                },
+              },
+            });
+         </script>
+    </body>
+</html>

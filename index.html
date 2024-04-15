@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .farmer-image {
+            width: 230px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload {
+            width: 200px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            width: 200px;
+            height: 40px;
+            background-color: #349f40;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(85, 175, 85);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <img src="https://www.pngarts.com/files/3/Cartoon-Farmer-PNG-Photo.png" alt="Farmer Image" class="farmer-image">
+        <h1 class="title">Plant Disease Detection</h1>
+        <p class="description" style="font-weight: lighter; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Detect various diseases in plants with a single tap in your hand! Press the button below.</p>
+        <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+            <input type="file" name="image" class="upload">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+
+</html>
